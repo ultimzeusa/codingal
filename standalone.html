@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App Homepage</title>
+    <style>
+        /* ========================================================
+           1. Paramètres globaux et Arrière-plan (Body)
+           ======================================================== */
+        body {
+            /* Police Arial ou sans-serif pour toute la page */
+            font-family: Arial, sans-serif;
+            
+            /* Couleur de fond bleu ciel */
+            background-color: #87ceeb;
+            
+            /* Motif d'arrière-plan avec radial-gradient : cercles blancs de 2px, transparent à 3px */
+            background-image: radial-gradient(#ffffff 2px, transparent 3px);
+            
+            /* Paramètres du motif */
+            background-size: 40px 40px;
+            background-repeat: repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            
+            /* Texte général blanc et centré */
+            color: #ffffff;
+            text-align: center;
+            
+            margin: 0;
+            padding: 30px 15px 50px 15px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: #ffffff;
+            opacity: 0.95;
+        }
+
+        /* ========================================================
+           2. Carte Météo Principale (Weather Card)
+           ======================================================== */
+        .weather-card {
+            /* Largeur de 400px, centré */
+            width: 400px;
+            max-width: 90%;
+            margin: 0 auto 35px auto;
+            
+            /* Bordure blanche solide de 3px et coins arrondis de 20px */
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+            
+            /* Fond linear-gradient vers le bas à droite, de #1e90ff à #87cefa */
+            background: linear-gradient(to bottom right, #1e90ff, #87cefa);
+            
+            padding: 25px 20px;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .weather-card h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        /* ========================================================
+           3. Animation CSS (@keyframes floatCloud) pour l'icône Cloud
+           ======================================================== */
+        .cloud-icon {
+            display: inline-block;
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+            /* Animation floatCloud, 3 secondes, infinie, mode alternatif */
+            animation: floatCloud 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatCloud {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(20px);
+            }
+        }
+
+        /* Température en grand (couleur jaune clair #fffacd) */
+        .temperature {
+            font-size: 54px;
+            font-weight: bold;
+            color: #fffacd;
+            margin: 15px 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .details p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        /* ========================================================
+           4. Section des prévisions (Weekly Forecast)
+           ======================================================== */
+        .forecast-section {
+            /* Largeur de 600px, centré */
+            width: 600px;
+            max-width: 90%;
+            margin: 0 auto;
+            
+            /* Bordure blanche solide de 3px et coins arrondis de 15px */
+            border: 3px solid #ffffff;
+            border-radius: 15px;
+            
+            /* Fond radial-gradient (cercle, de white à #add8e6) */
+            background: radial-gradient(circle, white, #add8e6);
+            
+            /* Texte à l'intérieur bleu foncé (#003366) */
+            color: #003366;
+            
+            padding: 25px 20px;
+            box-sizing: border-box;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .forecast-section h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #003366;
+        }
+
+        /* 5 paragraphes des jours avec une fine bordure (#4682b4) */
+        .forecast-day {
+            border: 1px solid #4682b4;
+            border-radius: 6px;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Titre H1 et sous-titre explicatif -->
+    <h1>My Weather App Homepage</h1>
+    <p class="subtitle">Check today's live conditions and the 5-day weather outlook at a glance.</p>
+
+    <!-- Carte Météo Principale -->
+    <div class="weather-card">
+        <h2>Today's Weather</h2>
+        
+        <!-- Icône Cloud animée avec floatCloud -->
+        <div class="cloud-icon">Cloud ☁️</div>
+        
+        <!-- Température en grand (28°C, couleur jaune clair #fffacd) -->
+        <div class="temperature">28°C</div>
+        
+        <!-- Détails sous forme de paragraphes -->
+        <div class="details">
+            <p><strong>City:</strong> Bengaluru</p>
+            <p><strong>Condition:</strong> Partly Cloudy</p>
+            <p><strong>Humidity:</strong> 62%</p>
+            <p><strong>Wind Speed:</strong> 12 km/h</p>
+        </div>
+    </div>
+
+    <!-- Section des prévisions (Weekly Forecast) -->
+    <div class="forecast-section">
+        <h3>Next 5 Days</h3>
+        <p class="forecast-day">Monday: Sunny - 30°C</p>
+        <p class="forecast-day">Tuesday: Rainy - 24°C</p>
+        <p class="forecast-day">Wednesday: Cloudy - 26°C</p>
+        <p class="forecast-day">Thursday: Thunderstorm - 25°C</p>
+        <p class="forecast-day">Friday: Sunny - 29°C</p>
+    </div>
+
+</body>
+</html>
